@@ -1,0 +1,28 @@
+@import 'normalize.css';
+@import './accesibility.scss';
+@import './reset.scss';
+@import './font.scss';
+
+$layout-width: global 1024px;
+
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100% !important;
+}
+
+@media (min-width: 1024px) {
+  html {
+    // 가로가 100vw 인데 세로 스크롤이 생긴 경우 생기는 가로스크롤을 제거하기 위함.
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}

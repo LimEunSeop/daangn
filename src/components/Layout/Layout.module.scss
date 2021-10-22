@@ -1,0 +1,10 @@
+$layout-width: 1024px;
+
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: $layout-width; // 사파리는 columns가 자동 계산되지 않고 그것을 width취급하기 때문에 꼭 정의해서 width가 되도록 해야함
+  grid-template-rows: auto 1fr auto;
+  width: $layout-width; // width를 또 따로 정한 이유는 margin 0 auto 를 하기위해서. inline-grid 하면 쫌 피곤해짐.
+  margin: 0 auto;
+  height: 100%;
+}

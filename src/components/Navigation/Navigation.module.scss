@@ -1,0 +1,98 @@
+@import 'styles/configs.scss';
+
+$primary-menu-height: 60px;
+
+.wrapper {
+  position: relative;
+}
+
+.primary-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-menu-item {
+  font-weight: 700;
+  font-size: 14px;
+
+  & > a {
+    display: block;
+    height: $primary-menu-height;
+    line-height: $primary-menu-height;
+
+    &:hover {
+      color: #ff8a3d;
+    }
+  }
+}
+
+.more-button {
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s;
+
+  &.opened {
+    transform: rotate(180deg);
+  }
+}
+
+.sub-menu-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: min(calc((100vw - 100%) / -2), 0px);
+    right: min(calc((100vw - 100%) / -2), 0px);
+    z-index: 998;
+    background: #fff;
+    border-top: 1px solid #e6e6e6;
+    box-shadow: 0 4px 4px -4px gray;
+  }
+}
+.sub-menu-list {
+  max-height: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  overflow: hidden;
+  transition: max-height 0.6s, padding 0.6s;
+
+  &.opened {
+    max-height: 450px;
+    padding: 20px 0;
+  }
+}
+
+.sub-menu-item {
+  position: relative;
+  z-index: 999;
+
+  .sub-menu-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #56c271;
+  }
+
+  a {
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+
+    &:hover {
+      color: #ff8a3d;
+      text-decoration: underline;
+    }
+  }
+}
